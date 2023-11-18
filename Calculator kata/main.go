@@ -117,10 +117,16 @@ func romanToArabic(roman string) int {
 }
 
 func convertToRoman(arabic int) string {
-	numerals := []struct {
+	type numeral struct {
 		Value  int
 		Symbol string
-	}{
+	}
+
+	numerals := []numeral{
+		{100, "C"},
+		{90, "XC"},
+		{50, "L"},
+		{40, "XL"},
 		{10, "X"},
 		{9, "IX"},
 		{5, "V"},
